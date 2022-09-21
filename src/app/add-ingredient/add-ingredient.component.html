@@ -1,0 +1,23 @@
+<div>
+<form [formGroup]="addForm" (submit)="addNewIngredient()" style="max-width:600px;">
+    <fieldset class="form-group">
+      
+
+            <label th:for="ingredients">Ingredient Name</label>
+        <input formControlName="name" type="text" 
+        class="form-control form-control-lg" name="name" />
+        
+       <br>
+        
+            <label th:for="ingredients">Quantity</label>
+            <input  type="number" formControlName="quantity"
+            class="form-control form-control-lg" 
+            />
+     
+        
+      </fieldset>
+      <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
+        Add Ingredient
+    </button>
+</form>
+</div>
