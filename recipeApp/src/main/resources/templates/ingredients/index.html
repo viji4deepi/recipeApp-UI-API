@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div ></div>
+
+
+<div class="container body-content " >
+    <h2>Add ingredients</h2>
+<!--    <ul th:each="addIngredients:${ingredients}">-->
+<!--        <li th:text="${addIngredients.ingredient}" > </li>-->
+<!--        <li  th:text="${addIngredients.quantity}" ></li>-->
+<!--    </ul>-->
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Ingredients</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="addIngredients:${ingredients}">
+            <td th:text="${addIngredients.ingredient}">Ingredients</td>
+            <td th:text="${addIngredients.quantity}">Quantity</td>
+             </tr>
+        </tbody>
+    </table>
+
+
+
+    <a th:href="@{'/ingredients/add'}">Add Ingredients</a>
+
+</div>
+
+</body>
+</html>
