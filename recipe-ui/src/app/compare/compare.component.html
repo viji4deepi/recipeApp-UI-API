@@ -1,0 +1,24 @@
+<div class="recipe-container">
+    <p>{{recipe.ingredientLines}}</p>
+</div>
+<div>
+    <b>My Ingredients</b>
+</div>
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let ingredient of ingredients">
+          <td><span>{{ingredient.name}}</span></td>
+          <td><span>{{ingredient.quantity}}</span></td>
+         
+        </tr>
+        </tbody>
+      </table>
+    
+</div>

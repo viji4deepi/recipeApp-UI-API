@@ -1,0 +1,14 @@
+{
+    "/dsfsgsg": {
+        "target": "https://api.edamam.com",
+        "secure": false,
+        "ws": false,
+        "logLevel": "debug"
+    },
+    "/refdfsdg": {
+        "target": "https://api.edamam.com",
+        "secure": false,
+        "ws": false,
+        "logLevel": "debug"
+    }
+}

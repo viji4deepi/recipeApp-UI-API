@@ -1,0 +1,27 @@
+table, tr , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+    }
+    table tr:nth-child(odd) {
+    background-color: #d6f1f8;
+    }
+    table tr:nth-child(even) {
+    background-color: #ffffff;
+    }
+    nav {
+        background-color: aquamarine;
+        height: 1cm;
+
+    }
+
+    .btn-btn-danger{
+       
+        font-size: larger;
+        color:purple;
+    }
+   .d-flex {
+       
+       text-align: left;
+       font-size: large;
+   }

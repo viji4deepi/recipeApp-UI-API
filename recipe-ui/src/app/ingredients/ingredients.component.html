@@ -1,0 +1,41 @@
+<br>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">
+        <div  class="d-flex">
+              <button routerLink="/login"  class="btn-btn-danger  mx-2">Logout</button>
+        </div>
+        
+    </span>
+  </nav>
+
+
+        <h1 style="color: aliceblue;">Add Ingredients</h1>
+        
+
+<div class="container body-content " >
+    <h2>Add ingredients</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Ingredients</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ingredient of myingredients">
+            <td>{{ingredient.name}}</td>
+            <td>{{ingredient.quantity}}</td>
+            <td>
+                <!-- <button type="button"(click)="editEmployees(row)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                  <button (click)="editEmployees(row)" class="btn btn-info">Edit</button> -->
+                  <button (click)="deleteIngredients()" class="btn btn-danger">Delete</button>
+              </td>
+             </tr>
+            
+        </tbody>
+    </table>
+
+    <button type="submit" (click)='addIngredients()'>Add Ingredients</button>
+
+</div>
+
