@@ -34,6 +34,25 @@ public class IngredientsController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> updateIngredients(@RequestBody Ingredients updateIngredients, @PathVariable Integer id){
+        try{
+            Ingredients ingredientsExist = ingredientsRepository.getReferenceById(id);
+            ingredientsExist.setName(updateIngredients.getName());
+            ingredientsRepository.save(ingredientsExist);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping(path="{id}")
+    public ResponseEntity deleteIngredients(@PathVariable int id){
+        ingredientsRepository.deleteById(id);
+        // ingredientsRepository.delete(removeIngredients);
+        return ResponseEntity.noContent().build();
+    }
+
    /* @GetMapping("add")
     public String displayAddIngredientsForm(Model model) {
         model.addAttribute(new Ingredients());
