@@ -48,11 +48,12 @@ export class IngredientsComponent implements OnInit{
   addIngredients(){
     this.router.navigate(['/ingredients/add'])
   }
-  deleteIngredients(){
-    this.ingredientService.delete(this.addForm.value)
+  deleteIngredients(ingredient : any){
+    this.ingredientService.delete(ingredient.id)
     .subscribe(res =>{
-      alert('employee data deleted');
+      alert('ingredients deleted');
       this.getIngredients();
+      console.log(res);
     })
   }
 
