@@ -4,12 +4,14 @@ import org.launchcode.liftoff.recipeApp.models.Ingredients;
 import org.launchcode.liftoff.recipeApp.repositories.IngredientsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("ingredients")
@@ -39,6 +41,7 @@ public class IngredientsController {
         try{
             Ingredients ingredientsExist = ingredientsRepository.getReferenceById(id);
             ingredientsExist.setName(updateIngredients.getName());
+            ingredientsExist.setQuantity(updateIngredients.getQuantity());
             ingredientsRepository.save(ingredientsExist);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoSuchElementException e){
