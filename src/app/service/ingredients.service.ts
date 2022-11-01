@@ -12,7 +12,6 @@ export class IngredientService {
   constructor (
     private apiService: Service
   ) {}
-
   private baseUrl = "http://localhost:8080/ingredients";
 
   add(ingredient: any): Observable<any>{
@@ -23,18 +22,21 @@ export class IngredientService {
     return this.apiService.get("http://localhost:8080/ingredients");
   }
 
-
   
-//   updateEmployee(data: any, id :number) {
-//     return this.apiService.put(`${this.baseUrl}/`+id,data)
-//     .pipe(map((res:any)=>{
-//       return res;
-//     }))
-// }
+  update(data: any) {
+
+    return this.apiService.put(`${this.baseUrl}/`+data.id,data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+}
 
     delete(id: number): Observable<any> {
-      return this.apiService.delete("http://localhost:8080/ingredients/{id}");
+      
+      return this.apiService.delete("http://localhost:8080/ingredients/"+id);
+
 }
+
 
 
 }

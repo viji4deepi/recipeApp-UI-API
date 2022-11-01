@@ -24,7 +24,11 @@ export class Service {
   put(path: string, body: Object = {}): Observable<any> {
     return this.http.put(
       path,
-      JSON.stringify(body)
+      JSON.stringify(body),{
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+        })
+    }
     ).pipe(catchError(this.formatErrors));
   }
 
