@@ -1,0 +1,1 @@
+alter table REGISTRATION_USERS modify mobile varchar(11);
